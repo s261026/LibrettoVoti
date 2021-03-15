@@ -25,5 +25,15 @@ public class TestLibretto {
 	Libretto librettoVenticinque = libretto.votiUguali(25);
 	System.out.println(librettoVenticinque);
 	
+	Voto chimica = libretto.ricercaCorso("Chimica");
+	Voto doppio =(new Voto ("Chimica", 25, LocalDate.of(2019, 6, 15)));
+	Voto conflitto =(new Voto ("Chimica", 29, LocalDate.of(2019, 6, 15)));
+	
+	
+	System.out.println(chimica + " doppione di " + conflitto+ "->" +libretto.esisteDuplicato(conflitto));
+	System.out.println(chimica + " doppione di " + doppio+ "->" +libretto.esisteDuplicato(doppio));
+	System.out.println(chimica + " conflitto di " + doppio+ "->" +libretto.esisteConflitto(doppio));
+	System.out.println(chimica + " conflitto di " + conflitto+ "->" +libretto.esisteConflitto(conflitto));
+	
 	}
 }
